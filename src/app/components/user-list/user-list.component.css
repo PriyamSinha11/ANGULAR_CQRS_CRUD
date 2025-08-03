@@ -1,0 +1,26 @@
+.container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+h2 {
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.table th, .table td {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.btn-warning {
+  margin-right: 0.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #888;
+  text-align: center;
+}

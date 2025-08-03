@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <h2>{{ isEditMode ? 'Edit User' : 'Create User' }}</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Name</label>
+      <input formControlName="name" class="form-control" />
+      <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="text-danger">
+        Name is required and must be at least 3 characters
+      </div>
+    </div>
+    <div class="mb-3">
+      <label>Email</label>
+      <input formControlName="email" class="form-control" />
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="text-danger">
+        Enter a valid email
+      </div>
+    </div>
+    <div class="mb-3">
+      <label>Age</label>
+      <input type="number" formControlName="age" class="form-control" />
+      <div *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched" class="text-danger">
+        Age must be between 18 and 100
+      </div>
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="userForm.invalid">
+      {{ isEditMode ? 'Update' : 'Create' }}
+    </button>
+  </form>
+</div>
